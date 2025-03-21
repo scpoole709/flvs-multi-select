@@ -1,0 +1,16 @@
+.multi-select-container{
+  background: none;
+}
+
+button {
+  border-radius: 5%;
+  padding: .75rem;
+  outline:none;
+  border: solid 1px #ced4da;
+}
+
+button:focus {
+  border: solid 3px #8abff7;
+  border-radius: .4em;
+  outline: blue;
+}

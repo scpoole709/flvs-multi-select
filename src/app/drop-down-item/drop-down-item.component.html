@@ -1,0 +1,10 @@
+<span #spanny class="item" tabindex="0" (keydown.enter)="animay.clickInput($event)" (keydown.space)="animay.clickInput($event)" (click)="animay.clickInput($event)">
+  <animated-cb #animay></animated-cb>
+  <ng-container *ngIf="item.text">
+    {{item.text}}
+  </ng-container>
+  <ng-container *ngIf="item.src">
+    <img [src]="item.src">
+  </ng-container>
+
+</span>

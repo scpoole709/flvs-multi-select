@@ -1,0 +1,33 @@
+.dropdown-container{
+  border: solid 2px #ced4da;
+  height: fit-content;
+  width: fit-content;
+  max-height: 12rem;
+  min-width: 3rem;
+  min-height: 1.5rem;
+  overflow-y: auto;
+  margin: 2px;
+}
+
+.dropdown-items{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.item-container{
+  height: 3.5em;
+  width: 100%;
+  padding: .5rem;
+}
+
+.select-all{
+  background: #eee;
+}
+
+
+.item {
+  width: 100%;
+  display: flex;
+  padding: .5rem;
+}
