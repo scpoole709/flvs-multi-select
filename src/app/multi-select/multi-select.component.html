@@ -4,7 +4,6 @@
     {{arrow}}
   </button>
   <ng-container *ngIf="opened">
-    <ms-dropdown-container [items]="items" (itemCollection)="itemCollection($event)"></ms-dropdown-container>
+    <ms-dropdown-container [items]="items" (itemCollection)="itemCollection($event)" [properties]="properties"></ms-dropdown-container>
   </ng-container>
-
 </div>

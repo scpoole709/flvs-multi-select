@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-*:focus {
+button:focus {
   border: solid 3px #8abff7;
   border-radius: .4em;
   outline: blue;
