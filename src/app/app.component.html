@@ -1,8 +1,22 @@
 
 <button>Pre Test Button</button>
 <div style="margin:3em">
-  <multi-select [items]="testItems" [btnText]="'Select Columns'"></multi-select>
+  <multi-select [items]="testItems" [btnText]="'Select Columns'" (change)="onChange($event)" [properties]="properties"></multi-select>
+</div>
+
+<div style="display: flex; flex-direction: column;">
+  <p *ngFor="let t of testItems">
+    {{ t.text + ": " + t.checked }}
+  </p>
 </div>
 
 <button>Post Test Button</button>
 <img src="./assets/yellowstar.png">
+
+<ng-template #testtemplate>
+  <p (click)="clicked()">spagetti and meatballs</p>
+  <p>spagetti and meatballs</p>
+  <p>spagetti and meatballs</p>
+  <p>spagetti and meatballs</p>
+  <p>spagetti and meatballs</p>
+</ng-template>

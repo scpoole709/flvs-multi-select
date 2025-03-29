@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, EventEmitter, ViewChild, Output, Input, ElementRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,13 +10,17 @@ import { FormsModule } from '@angular/forms';
 })
 export class AnimatedCheckBoxComponent {
 
-  @ViewChild("cbInput") cbInput;
-  isChecked = true;
+  @Input() checked = false;
+  @Input() disabled = false;
+  @Input() properties;
+  @Output() change = new EventEmitter<boolean>();
 
   clickInput(ev){
-    this.isChecked = !this.isChecked;
+    if (!this.disabled){
+      this.checked = !this.checked;
+      this.change.next(this.checked);
+    }
     ev.stopPropagation();
     ev.preventDefault();
-
   }
 }

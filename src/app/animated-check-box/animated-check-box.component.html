@@ -1,9 +1,7 @@
-<!-- <div class="container"> -->
-  <div class="row" tabindex="-1">
-    <!-- <p>Notification</p> -->
-    <label tabindex="-1">
-      <input #cbInput type="checkbox" [checked]="isChecked" tabindex="-1" focusable="false">
+
+  <div #me class="row" tabindex="-1">
+    <label tabindex="0">
+      <input #cbInput type="checkbox" [(ngModel)]="checked" tabindex="0">
       <span tabindex="-1"></span>
     </label>
   </div>
-<!-- </div> -->
