@@ -20,3 +20,27 @@
   <p>spagetti and meatballs</p>
   <p>spagetti and meatballs</p>
 </ng-template>
+<br><br>
+
+<div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;">
+  <ms-element-overlay [(state)]="elementOverlayState"><ng-container *ngTemplateOutlet="temp4"></ng-container></ms-element-overlay>
+  <p>Element Overlay State: {{elementOverlayState}}</p>
+</div>
+
+<ng-template #temp>
+  <div *ngIf="elementOverlayState" style="width:100%; height: 100%; background-color: gray;"></div>
+  <div *ngIf="!elementOverlayState" style="width:15em; height: 2em; background-color: gray;"></div>
+</ng-template>
+
+<ng-template #temp2>
+  <div *ngIf="elementOverlayState" style="width:100%; height: 100%; background-color: red;"></div>
+  <div *ngIf="!elementOverlayState" style="width:15em; height: 2em; background-color: blue;"></div>
+</ng-template>
+
+<ng-template #temp3>
+  <animated-cb [checked]="elementOverlayState"></animated-cb>
+</ng-template>
+
+<ng-template #temp4>
+  <graphic-cb [checked]="elementOverlayState"></graphic-cb>
+</ng-template>

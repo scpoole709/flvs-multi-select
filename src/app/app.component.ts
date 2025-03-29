@@ -1,12 +1,15 @@
 import { OnInit, Component, Input, ViewChild } from '@angular/core';
 import { MultiSelectComponent } from "./multi-select/multi-select.component";
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgTemplateOutlet } from '@angular/common';
 import { Properties } from '../../util/Properties';
+import { ElementOverlayComponent } from "./element-overlay/element-overlay.component";
+import { AnimatedCheckBoxComponent } from "./animated-check-box/animated-check-box.component";
+import { GraphicCBComponent } from './graphic-cb/graphic-cb.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MultiSelectComponent, CommonModule],
+  imports: [MultiSelectComponent, CommonModule, ElementOverlayComponent, NgTemplateOutlet, AnimatedCheckBoxComponent, GraphicCBComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -16,6 +19,8 @@ export class AppComponent implements OnInit {
 
   testItems = [];
   properties = new Properties();
+
+  elementOverlayState: boolean = true;
 
   ngOnInit(): void {
     this.properties.set("check-color", "black");
@@ -27,7 +32,6 @@ export class AppComponent implements OnInit {
         {src: "./assets/yellowstar.png", value: "clown 3", checked: true}
       ];
     }, 10);
-
   }
   clicked(){
     console.log("template clicked");

@@ -1,0 +1,42 @@
+.row {
+  --cb-font-size: 72pt;
+  --cb-main-border-width: 3px;
+  --cb-border-width: 0.2em;
+  --cb-border-radius: 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 1em;
+  height: fit-content;
+  margin-left: 30px;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  font-size: var(--cb-font-size);
+  border: var(--cb-main-border-width) solid #00f;
+  border-radius: var(--cb-border-radius);
+
+  .span-plain {
+    font-size: var(--cb-font-size);
+    content: '';
+    position: absolute;
+    left: .2em;
+    bottom: .1em;
+    width: 0px;
+    height: 0px;
+    border-color: black;
+    border-style: solid;
+    border-width: 0 var(--cb-border-width) var(--cb-border-width) 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: width 0.5s, height 0.5s, opacity 0.5s;
+  }
+
+  .span-checked {
+    font-size: var(--cb-font-size);
+    width: .65em;
+    height: 1em;
+    opacity: 1;
+  }
+}
