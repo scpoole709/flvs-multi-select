@@ -118,9 +118,11 @@ export class MultiSelectComponent implements OnInit, OnDestroy, AfterViewInit{
   }
 
   findCurrent(){
-    for (var i =  0; i < this.itemsList.length; i++){
-      if (this.itemsList[i].hasFocus()){
-        return i;
+    if (!!this.itemsList){
+      for (var i =  0; i < this.itemsList.length; i++){
+        if (this.itemsList[i].hasFocus()){
+          return i;
+        }
       }
     }
     return -1;
