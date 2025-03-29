@@ -1,4 +1,4 @@
-import { Component, EventEmitter, ViewChild, Output, Input, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, EventEmitter, ViewChild, Output, Input, ElementRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,33 +8,19 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './animated-check-box.component.html',
   styleUrl: './animated-check-box.component.css'
 })
-export class AnimatedCheckBoxComponent implements AfterViewInit {
+export class AnimatedCheckBoxComponent {
 
-  @ViewChild("cbInput") cbInput;
-  @ViewChild("me") me: ElementRef;
-  @Input() item;
+  @Input() checked = false;
+  @Input() disabled = false;
   @Input() properties;
   @Output() change = new EventEmitter<boolean>();
 
-  ngAfterViewInit(){
-    // let list = this.me.nativeElement.querySelectorAll("input");
-    // list[0].style.borderColor = "red";
-    // const myElement = document.querySelector('span')
-    // const myPseudoElement = window.getComputedStyle(myElement, ':after')
-    // let el = this.me.nativeElement.querySelector("span::after");
-    // alert(el);
-  }
-
   clickInput(ev){
-    if (!this.item.disable){
-      this.item.checked = !this.item.checked;
-      this.change.next(this.item.checked);
+    if (!this.disabled){
+      this.checked = !this.checked;
+      this.change.next(this.checked);
     }
     ev.stopPropagation();
     ev.preventDefault();
-  }
-
-  nono(ev:FocusEvent){
-    console.log(ev.relatedTarget);
   }
 }

@@ -6,7 +6,7 @@
   (click)="animay.clickInput($event)"
   [ariaLabel]="item.ariaLabel?item.ariaLabel : item.value"
   [style.color]='item.disable ? "#aaa" : "none"'>
-  <animated-cb #animay (change)="onClick($event)" [item]="item" [properties]="properties"></animated-cb>
+  <animated-cb #animay (change)="onClick($event)" [checked]="item.checked" [disabled]="!!item.disable" [properties]="properties"></animated-cb>
   <ng-container *ngIf="item.text">
     {{item.text}}
   </ng-container>

@@ -29,12 +29,15 @@ export class DropdownContainerComponent implements OnChanges, AfterViewInit{
   ngAfterViewInit(): void {
     if (this.allDropdowns){
       this.itemCollection.next(this.allDropdowns.toArray());
+      setTimeout(() => {this.checkAllSelected()});
     }
   }
 
   selectAll(ev){
     this.items.forEach(each => {
-      each.checked = ev.state;
+      if (!each.disable){
+        each.checked = ev.state;
+      }
     })
   }
 

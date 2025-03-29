@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
       this.testItems = [
         {template: this.testtemplate, value: "clown 1", checked: true},
         {text: "bozo", value: "clown 1", checked: true, disable:true},
-        {text: "shnozo", value: "clown 2", checked: false},
+        {text: "shnozo", value: "clown 2", checked: true},
         {src: "./assets/yellowstar.png", value: "clown 3", checked: true}
       ];
     }, 10);
