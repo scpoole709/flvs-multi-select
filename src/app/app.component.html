@@ -11,7 +11,7 @@
 </div>
 
 <button>Post Test Button</button>
-<img src="./assets/yellowstar.png">
+<!-- <img src="./assets/yellowstar.png"> -->
 
 <ng-template #testtemplate>
   <p (click)="clicked()">spagetti and meatballs</p>
@@ -22,25 +22,45 @@
 </ng-template>
 <br><br>
 
-<div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;">
-  <ms-element-overlay [(state)]="elementOverlayState"><ng-container *ngTemplateOutlet="temp4"></ng-container></ms-element-overlay>
-  <p>Element Overlay State: {{elementOverlayState}}</p>
+<input type="radio" name="bon">
+<input type="radio" name="bon">
+
+
+<div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;margin-left:20px;padding: 10px;">
+  <checkbox-proxy [(state)]="elementOverlayState1" [showDefault]="true" name="bongo" [ariaLabel]="'the first button'"></checkbox-proxy>
+  <br><p>Checkbox Overlay State without content: {{elementOverlayState1}}</p>
 </div>
 
+<div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;">
+  <checkbox-proxy [(state)]="elementOverlayState1" [showDefault]="false" type="checkbox" name="bongo" [ariaLabel]="'the first button'"><ng-container *ngTemplateOutlet="temp4"></ng-container></checkbox-proxy>
+  <p>Checkbox Overlay State: {{elementOverlayState1}}</p>
+</div>
+
+<div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;">
+  <ms-element-overlay [(state)]="elementOverlayState2" type="checkbox" [ariaLabel]="'the second button'" name="bongo"><ng-container *ngTemplateOutlet="temp5"></ng-container></ms-element-overlay>
+  <p>Element Overlay State: {{elementOverlayState2}}</p>
+</div>
+
+
 <ng-template #temp>
-  <div *ngIf="elementOverlayState" style="width:100%; height: 100%; background-color: gray;"></div>
-  <div *ngIf="!elementOverlayState" style="width:15em; height: 2em; background-color: gray;"></div>
+  <div *ngIf="elementOverlayState1" style="width:100%; height: 100%; background-color: gray;"></div>
+  <div *ngIf="!elementOverlayState1" style="width:15em; height: 2em; background-color: gray;"></div>
 </ng-template>
 
 <ng-template #temp2>
-  <div *ngIf="elementOverlayState" style="width:100%; height: 100%; background-color: red;"></div>
-  <div *ngIf="!elementOverlayState" style="width:15em; height: 2em; background-color: blue;"></div>
+  <div *ngIf="elementOverlayState1" style="width:100%; height: 100%; background-color: red;"></div>
+  <div *ngIf="!elementOverlayState1" style="width:15em; height: 2em; background-color: blue;"></div>
 </ng-template>
 
 <ng-template #temp3>
-  <animated-cb [checked]="elementOverlayState"></animated-cb>
+  <animated-cb [checked]="elementOverlayState1"></animated-cb>
 </ng-template>
 
 <ng-template #temp4>
-  <graphic-cb [checked]="elementOverlayState"></graphic-cb>
+  <graphic-cb [checked]="elementOverlayState1"></graphic-cb>
+</ng-template>
+
+
+<ng-template #temp5>
+  <graphic-cb [checked]="elementOverlayState2"></graphic-cb>
 </ng-template>

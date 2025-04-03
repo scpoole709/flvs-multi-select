@@ -1,0 +1,26 @@
+
+<div #parent
+  class="element-overlay-container"
+  (keydown.enter)="processed($event, cb)"
+  (click)="processed($event, cb)"
+>
+  <input #cb
+    type="checkbox"
+    [name]="name"
+    class="element"
+    (change)="change($event)"
+    [checked]="state()"
+    tabindex="0"
+    [attr.aria-label]="ariaLabel" role="checkbox"
+  >
+  <span class="overlay" #ref>
+    <ng-container *ngIf="showDefault">
+      <ng-container *ngTemplateOutlet="defaultTemplate"></ng-container>
+    </ng-container>
+    <ng-content #ref *ngIf="!showDefault"></ng-content>
+  </span>
+</div>
+
+<ng-template #defaultTemplate>
+  <graphic-cb id="gobygook" [checked]="state()"></graphic-cb>
+</ng-template>

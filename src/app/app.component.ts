@@ -1,15 +1,16 @@
 import { OnInit, Component, Input, ViewChild } from '@angular/core';
-import { MultiSelectComponent } from "./multi-select/multi-select.component";
+import { MultiSelectComponent } from "../../projects/multi-select/src/lib/multi-select.component";
 import { CommonModule, NgTemplateOutlet } from '@angular/common';
 import { Properties } from '../../util/Properties';
-import { ElementOverlayComponent } from "./element-overlay/element-overlay.component";
-import { AnimatedCheckBoxComponent } from "./animated-check-box/animated-check-box.component";
-import { GraphicCBComponent } from './graphic-cb/graphic-cb.component';
+import { ElementOverlayComponent } from "../../projects/multi-select/src/lib/element-overlay/element-overlay.component";
+import { AnimatedCheckBoxComponent } from "../../projects/multi-select/src/lib/animated-check-box/animated-check-box.component";
+import { GraphicCBComponent } from '../../projects/multi-select/src/lib/graphic-cb/graphic-cb.component';
+import { CheckboxOverlayComponent } from "../../projects/multi-select/src/lib/checkbox-overlay/checkbox-overlay.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MultiSelectComponent, CommonModule, ElementOverlayComponent, NgTemplateOutlet, AnimatedCheckBoxComponent, GraphicCBComponent],
+  imports: [MultiSelectComponent, CommonModule, ElementOverlayComponent, NgTemplateOutlet, AnimatedCheckBoxComponent, GraphicCBComponent, CheckboxOverlayComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -20,7 +21,8 @@ export class AppComponent implements OnInit {
   testItems = [];
   properties = new Properties();
 
-  elementOverlayState: boolean = true;
+  elementOverlayState1: boolean = true;
+  elementOverlayState2: boolean = false;
 
   ngOnInit(): void {
     this.properties.set("check-color", "black");

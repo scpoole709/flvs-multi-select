@@ -11,6 +11,11 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
+    "paths": {
+      "multi-select": [
+        "./dist/multi-select"
+      ]
+    },
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,

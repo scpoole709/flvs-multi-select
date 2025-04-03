@@ -1,0 +1,16 @@
+<div
+  class="element-overlay-container"
+  (keydown.enter)="processed($event, cb)"
+  (click)="processed($event, cb)"
+>
+  <input #cb
+    [type]="type"
+    [name]="name"
+    class="element"
+    (change)="change($event)"
+    [checked]="state()"
+    tabindex="0"
+    [attr.aria-label]="ariaLabel" role="checkbox"
+  >
+  <span class="overlay" ><ng-content></ng-content></span>
+</div>

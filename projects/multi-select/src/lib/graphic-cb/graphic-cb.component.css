@@ -1,31 +1,25 @@
 .row {
-  --cb-font-size: 72pt;
-  --cb-main-border-width: 3px;
+  --cb-main-border-width: 2px;
   --cb-border-width: 0.2em;
   --cb-border-radius: 3px;
+  --cb-check-color: black;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 1em;
-  height: fit-content;
-  margin-left: 30px;
   position: relative;
   width: 1em;
   height: 1em;
-  font-size: var(--cb-font-size);
   border: var(--cb-main-border-width) solid #00f;
   border-radius: var(--cb-border-radius);
+  box-sizing: border-box;
+  padding: 0;
 
   .span-plain {
     font-size: var(--cb-font-size);
-    content: '';
     position: absolute;
     left: .2em;
-    bottom: .1em;
+    bottom: 0em;
     width: 0px;
     height: 0px;
-    border-color: black;
+    border-color: var(--cb-check-color);
     border-style: solid;
     border-width: 0 var(--cb-border-width) var(--cb-border-width) 0;
     transform: rotate(45deg);
@@ -34,7 +28,6 @@
   }
 
   .span-checked {
-    font-size: var(--cb-font-size);
     width: .65em;
     height: 1em;
     opacity: 1;

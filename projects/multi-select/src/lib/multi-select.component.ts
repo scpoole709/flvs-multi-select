@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, AfterViewInit, Input, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
-import { DropdownContainerComponent, DropdownItem } from "../dropdown-container/dropdown-container.component";
+import { DropdownContainerComponent, DropdownItem } from "./dropdown-container/dropdown-container.component";
 import { CommonModule } from '@angular/common';
-import { DropDownItemComponent } from '../drop-down-item/drop-down-item.component';
+import { DropDownItemComponent } from './drop-down-item/drop-down-item.component';
 
 @Component({
   selector: 'multi-select',
@@ -130,17 +130,17 @@ export class MultiSelectComponent implements OnInit, OnDestroy, AfterViewInit{
 
   findNext(current: number){
     for (var i =  current + 1; i < this.itemsList.length; i++){
-      if (!this.itemsList[i].isDisabled()){
+      // if (!this.itemsList[i].isDisabled()){
         return i;
-      }
+      // }
     }
     return this.itemsList.length;
   }
   findPrev(current: number){
     for (var i =  current - 1; i >= 0; i--){
-      if (!this.itemsList[i]?.isDisabled()){
+      // if (!this.itemsList[i]?.isDisabled()){
         return i;
-      }
+      // }
     }
     return -1;
   }
