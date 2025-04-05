@@ -25,21 +25,21 @@
 <input type="radio" name="bon">
 <input type="radio" name="bon">
 
-
-<div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;margin-left:20px;padding: 10px;">
+<div  >
+<!-- <div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;"> -->
   <checkbox-proxy [(state)]="elementOverlayState1" [showDefault]="true" name="bongo" [ariaLabel]="'the first button'"></checkbox-proxy>
   <br><p>Checkbox Overlay State without content: {{elementOverlayState1}}</p>
-</div>
+<!-- </div> -->
 
 <div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;">
   <checkbox-proxy [(state)]="elementOverlayState1" [showDefault]="false" type="checkbox" name="bongo" [ariaLabel]="'the first button'"><ng-container *ngTemplateOutlet="temp4"></ng-container></checkbox-proxy>
   <p>Checkbox Overlay State: {{elementOverlayState1}}</p>
 </div>
-
-<div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;">
+</div>
+<!-- <div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;">
   <ms-element-overlay [(state)]="elementOverlayState2" type="checkbox" [ariaLabel]="'the second button'" name="bongo"><ng-container *ngTemplateOutlet="temp5"></ng-container></ms-element-overlay>
   <p>Element Overlay State: {{elementOverlayState2}}</p>
-</div>
+</div> -->
 
 
 <ng-template #temp>

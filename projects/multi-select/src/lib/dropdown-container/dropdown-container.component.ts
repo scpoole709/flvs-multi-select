@@ -21,16 +21,17 @@ export class DropdownContainerComponent implements OnChanges, AfterViewInit{
   selectAllItem: DropdownItem = {text: "Select All", value: "all", checked: false, disable: false, arialabel: "Select All"};
 
   ngOnChanges(changes){
-    if (this.allDropdowns){
+    setTimeout(() => {
       this.itemCollection.next(this.allDropdowns.toArray());
-    }
+      this.checkAllSelected();
+    }, 10);
   }
 
   ngAfterViewInit(): void {
-    if (this.allDropdowns){
-      this.itemCollection.next(this.allDropdowns.toArray());
-      setTimeout(() => {this.checkAllSelected()});
-    }
+    // if (this.allDropdowns){
+    //   this.itemCollection.next(this.allDropdowns.toArray());
+    //   setTimeout(() => {this.checkAllSelected()});
+    // }
   }
 
   selectAll(ev){
@@ -42,7 +43,7 @@ export class DropdownContainerComponent implements OnChanges, AfterViewInit{
   }
 
   handleClick(ev){
-    ev.item.checked = ev.state;
+    //ev.item.checked = ev.state;
     this.checkAllSelected();
   }
   checkAllSelected(){

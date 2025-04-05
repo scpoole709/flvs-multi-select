@@ -4,6 +4,8 @@
   --cb-border-radius: 3px;
   --cb-check-color: black;
 
+  box-sizing: content-box;
+  display:inline-block;
   position: relative;
   width: 1em;
   height: 1em;

@@ -88,7 +88,7 @@ export class MultiSelectComponent implements OnInit, OnDestroy, AfterViewInit{
     }
   }
 
-  itemsList;
+  itemsList = [];
   itemCollection(ev){
     this.itemsList = ev;
   }
@@ -102,7 +102,7 @@ export class MultiSelectComponent implements OnInit, OnDestroy, AfterViewInit{
     }
     else {
       let current = this.findCurrent();
-      current = shiftKey ? this.findPrev(current) : this.findNext(current);
+        current = shiftKey ? this.findPrev(current) : this.findNext(current);
 
       if (current < 0 || current >= this.itemsList.length){
         this.button.nativeElement.focus();
