@@ -9,7 +9,7 @@
   [ngClass]="cb.hasFocus()? 'focused' : ''"
   >
   <div style="padding: 0 .5em;">
-    <checkbox-proxy #cb [(state)]="checked" [disable]="true" [showDefault]="true" name="bongo" [ariaLabel]="'the first button'"></checkbox-proxy>
+    <checkbox-proxy #cb [(state)]="checked" [disable]="isDisabled" [showDefault]="true" name="bongo" [ariaLabel]="'the first button'"></checkbox-proxy>
   </div>
   <ng-container *ngIf="item.text">
     {{item.text}}

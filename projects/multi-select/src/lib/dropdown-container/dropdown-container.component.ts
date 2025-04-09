@@ -43,6 +43,7 @@ export class DropdownContainerComponent implements OnChanges {
     //ev.item.checked = ev.state;
     this.checkAllSelected();
   }
+  
   checkAllSelected(){
     let found = this.items.find( i => !i.checked);
     this.selectAllItem.checked = !found;

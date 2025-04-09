@@ -31,7 +31,7 @@ export class DropDownItemComponent {
   hasFocus(){
     return this.cb?.hasFocus();
   }
-  isDisabled(){
+  get isDisabled(){
     return this.item.disable;
   }
 }

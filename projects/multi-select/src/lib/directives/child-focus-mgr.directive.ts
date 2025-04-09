@@ -28,11 +28,12 @@ export class ChildFocusMgrDirective {
 
   @HostListener('focusout', ['$event'])
   focusOut(event: FocusEvent){
+
+  }
+
+  focus(list, i: number){
     setTimeout( () => {
-      let list =  Array.from(this.el.nativeElement.querySelectorAll('.overlay'));
-      if (list.indexOf(document.activeElement) < 0){
-        this.childFocusMgr.next();
-      }
+      (<HTMLElement>list[i]).focus();
     }, 10);
   }
 
@@ -41,9 +42,7 @@ export class ChildFocusMgrDirective {
     let i =  list.indexOf(document.activeElement);
     i += up ? -1 : 1;
     if (list.length > 0 && i >= 0 && i < list.length){
-          setTimeout( () => {
-        (<HTMLElement>list[i]).focus();
-      }, 10);
+      this.focus(list, i);
     }
     else {
       this.childFocusMgr.next();

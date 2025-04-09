@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, model, Output, ViewChild } from '@angular/core';
 import { GraphicCBComponent } from '../graphic-cb/graphic-cb.component';
+import { GraphicRadioComponent } from "../graphic-radio/graphic-radio.component";
 
 @Component({
   selector: 'checkbox-proxy',
   standalone: true,
-  imports: [CommonModule, GraphicCBComponent],
+  imports: [CommonModule, GraphicCBComponent, GraphicRadioComponent],
   templateUrl: './checkbox-overlay.component.html',
   styleUrl: './checkbox-overlay.component.css'
 })
@@ -29,10 +30,13 @@ export class CheckboxOverlayComponent {
   }
 
   click(event){
-    event.preventDefault();
-    event.stopPropagation();
-    //console.log("state: " + this.state());
-    this.state.update(newValue => !this.state());
+    if (!this.disable){
+      event.preventDefault();
+      event.stopPropagation();
+      //console.log("state: " + this.state());
+      this.state.update(newValue => !this.state());
+    }
+    this.focus();
   }
 
   focus(){
