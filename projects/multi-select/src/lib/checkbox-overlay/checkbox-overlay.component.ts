@@ -31,11 +31,12 @@ export class CheckboxOverlayComponent {
 
   click(event){
     if (!this.disable){
-      event.preventDefault();
-      event.stopPropagation();
       //console.log("state: " + this.state());
       this.state.update(newValue => !this.state());
     }
+
+    event.preventDefault();
+    event.stopPropagation();
     this.focus();
   }
 

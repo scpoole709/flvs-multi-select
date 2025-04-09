@@ -1,7 +1,6 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
-import { DropdownContainerComponent, DropdownItem } from "./dropdown-container/dropdown-container.component";
+import { Component, OnInit, OnDestroy, Input, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
+import { DropdownContainerComponent } from "./dropdown-container/dropdown-container.component";
 import { CommonModule } from '@angular/common';
-import { DropDownItemComponent } from './drop-down-item/drop-down-item.component';
 
 @Component({
   selector: 'multi-select',
@@ -10,7 +9,7 @@ import { DropDownItemComponent } from './drop-down-item/drop-down-item.component
   templateUrl: './multi-select.component.html',
   styleUrl: './multi-select.component.css'
 })
-export class MultiSelectComponent implements OnInit {
+export class MultiSelectComponent implements OnInit, OnDestroy {
   @ViewChild("button") button: ElementRef;
   @Input() btnText = "not set";
   @Input() items = [];
@@ -22,6 +21,15 @@ export class MultiSelectComponent implements OnInit {
   opened = false;
 
   ngOnInit(): void {
+    document.onclick = (ev) => {
+      if (ev.target !== this.button.nativeElement){
+        this.opened = false;
+      }
+    }
+  }
+  
+  ngOnDestroy(){
+    document.onclick = null;
   }
 
   get arrow(){
