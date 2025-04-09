@@ -1,12 +1,12 @@
 
-<div class="dropdown-container">
-  <div class="dropdown-items">
-    <div class="item-container select-all">
+<div class="dropdown-container" [style.top]="top">
+  <div class="dropdown-items" (childFocusMgr)="focusChange($event)">
+    <div class="item-container select-all" autofocus>
       <ms-drop-down-item [item]="selectAllItem" (changes)="selectAll($event)" [properties]="properties"></ms-drop-down-item>
     </div>
     <ng-container *ngFor="let item of items">
       <div class="item-container">
-        <ms-drop-down-item [item]="item" (changes)="handleClick($event)" [properties]="properties"></ms-drop-down-item>
+        <ms-drop-down-item [item]="item" (changes)="changes($event)" [properties]="properties"></ms-drop-down-item>
       </div>
     </ng-container>
   </div>

@@ -1,9 +1,9 @@
-<div #parent class="multi-select-container">
+<div class="multi-select-container">
   <button #button (click)="toggle()">
     {{btnText}}
     {{arrow}}
   </button>
   <ng-container *ngIf="opened">
-    <ms-dropdown-container [items]="items" (itemCollection)="itemCollection($event)" [properties]="properties"></ms-dropdown-container>
+    <ms-dropdown-container [items]="items" (focusLost)="focusLost()" [top]="button.clientHeight + 'px'" [properties]="properties"></ms-dropdown-container>
   </ng-container>
 </div>

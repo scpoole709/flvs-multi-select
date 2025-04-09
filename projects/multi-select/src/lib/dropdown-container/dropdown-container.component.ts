@@ -1,20 +1,20 @@
 import { NgFor } from '@angular/common';
-import { Component, Input, ViewChildren, OnChanges, AfterViewInit, EventEmitter, Output } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AnimatedCheckBoxComponent } from "../animated-check-box/animated-check-box.component";
+import { Component, Input, ViewChildren, OnChanges, EventEmitter, Output } from '@angular/core';
 import { DropDownItemComponent } from '../drop-down-item/drop-down-item.component';
+import { ChildFocusMgrDirective } from '../directives/child-focus-mgr.directive';
 
 @Component({
   selector: 'ms-dropdown-container',
   standalone: true,
-  imports: [NgFor, DropDownItemComponent],
+  imports: [NgFor, DropDownItemComponent, ChildFocusMgrDirective],
   templateUrl: './dropdown-container.component.html',
   styleUrl: './dropdown-container.component.css'
 })
-export class DropdownContainerComponent implements OnChanges, AfterViewInit{
+export class DropdownContainerComponent implements OnChanges {
   @Input() items: DropdownItem [] = [];
+  @Input() top = "40px";
   @Input() properties;
-  @Output() itemCollection = new EventEmitter<[]>();
+  @Output() focusLost = new EventEmitter<void>();
 
   @ViewChildren(DropDownItemComponent) allDropdowns;
 
@@ -22,16 +22,13 @@ export class DropdownContainerComponent implements OnChanges, AfterViewInit{
 
   ngOnChanges(changes){
     setTimeout(() => {
-      this.itemCollection.next(this.allDropdowns.toArray());
+      this.allDropdowns.toArray()[0].focus();
       this.checkAllSelected();
     }, 10);
   }
 
-  ngAfterViewInit(): void {
-    // if (this.allDropdowns){
-    //   this.itemCollection.next(this.allDropdowns.toArray());
-    //   setTimeout(() => {this.checkAllSelected()});
-    // }
+  focusChange(event){
+    this.focusLost.next();
   }
 
   selectAll(ev){
@@ -42,7 +39,7 @@ export class DropdownContainerComponent implements OnChanges, AfterViewInit{
     })
   }
 
-  handleClick(ev){
+  changes(ev){
     //ev.item.checked = ev.state;
     this.checkAllSelected();
   }

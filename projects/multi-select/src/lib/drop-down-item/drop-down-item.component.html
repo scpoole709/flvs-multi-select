@@ -1,5 +1,5 @@
-<span #spanny
- (keydown.enter)="cb.click($event)"
+<span #spanny id="spanny"
+  (keydown.enter)="cb.click($event)"
   (keydown.space)="cb.click($event)"
   (click)="cb.click($event)"
   class="item"
@@ -8,9 +8,9 @@
   [style.color]='item.disable ? "#aaa" : "none"'
   [ngClass]="cb.hasFocus()? 'focused' : ''"
   >
+  <div style="padding: 0 .5em;">
     <checkbox-proxy #cb [(state)]="checked" [disable]="true" [showDefault]="true" name="bongo" [ariaLabel]="'the first button'"></checkbox-proxy>
-
-  <!-- <animated-cb #animay (change)="onClick($event)" [checked]="item.checked" [disabled]="!!item.disable" [properties]="properties"></animated-cb> -->
+  </div>
   <ng-container *ngIf="item.text">
     {{item.text}}
   </ng-container>
@@ -21,7 +21,3 @@
     <ng-container *ngTemplateOutlet="item.template"></ng-container>
   </ng-container>
 </span>
-<!--
-  (keydown.enter)="animay.clickInput($event)"
-  (keydown.space)="animay.clickInput($event)"
-  (click)="animay.clickInput($event)" -->
