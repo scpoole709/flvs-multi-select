@@ -1,5 +1,6 @@
 
-  <div #me class="row" tabindex="0">
-    <input #cbInput type="checkbox" [(ngModel)]="checked" tabindex="0">
-    <span tabindex="-1"></span>
-  </div>
+  <!-- <div #me class="row" tabindex="0"> -->
+    <checkbox-proxy [(state)]="checked" [showDefault]="true" name="bongo" [ariaLabel]="'the first button'"></checkbox-proxy>
+    <!-- <input #cbInput type="checkbox" [(ngModel)]="checked" tabindex="0">
+    <span tabindex="-1"></span> -->
+  <!-- </div> -->

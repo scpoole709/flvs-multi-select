@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, model, Output } from '@angular/core';
+import { Component, EventEmitter, Input, model, Output, ViewChild } from '@angular/core';
 import { GraphicCBComponent } from '../graphic-cb/graphic-cb.component';
 
 @Component({
@@ -13,16 +13,32 @@ export class CheckboxOverlayComponent {
   @Input() id: string;
   @Input() name: string;
   @Input() ariaLabel: string = "Checkbox";
+  @Input() disable = false;
   @Input() showDefault = true;
+
+  @ViewChild("div") div;
 
   state = model<boolean>(false);
   test = false;
-  change(event){
-    this.state.update(newValue => event.target.checked);
-  }
 
   processed(event, cb){
-    cb.click();
-    cb.focus();
+
+      this.state.update(newValue => event.target.checked);
+    //cb.click();
+    //cb.focus();
+  }
+
+  click(event){
+    event.preventDefault();
+    event.stopPropagation();
+    //console.log("state: " + this.state());
+    this.state.update(newValue => !this.state());
+  }
+
+  focus(){
+    this.div.nativeElement.focus();
+  }
+  hasFocus(){
+    return this.div?.nativeElement == document.activeElement;
   }
 }

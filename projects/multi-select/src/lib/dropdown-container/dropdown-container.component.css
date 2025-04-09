@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 .dropdown-container{
+  background: white;
   border: solid 2px #ced4da;
   height: fit-content;
   width: fit-content;
@@ -10,6 +11,9 @@
   min-height: 1.5rem;
   overflow-y: auto;
   margin: 2px;
+  position:absolute;
+  left: 0;
+  top: 30px;
 }
 
 .dropdown-items{

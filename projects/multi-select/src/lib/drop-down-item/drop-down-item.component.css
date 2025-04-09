@@ -15,7 +15,7 @@
   }
 }
 
-.item:focus{
+.focused {
   border: solid 3px #8abff7;
 }
 
