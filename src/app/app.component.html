@@ -1,5 +1,18 @@
 
 <button>Pre Test Button</button>
+
+<div style="margin: 0 auto;height: 4em; width: 4em; border:solid 3px black;display: flex;border-radius: 50%;
+  align-items: center;
+  justify-content: center;">
+  <div style="height:50%; width: 50%; border: solid 3px red;border-radius: 50%;vertical-align: middle;">
+
+  </div>
+</div>
+
+
+
+
+
 <div style="margin:3em">
   <multi-select [items]="testItems" [btnText]="'Select Columns'" (change)="onChange($event)" [properties]="properties"></multi-select>
 </div>
@@ -22,20 +35,31 @@
 </ng-template>
 <br><br>
 
-<input type="radio" name="bon">
-<input type="radio" name="bon">
+<input type="radio" name="bon" [(ngModel)]="elementOverlayState1">
+<input type="radio" name="bon" [(ngModel)]="elementOverlayState1">
 
 <div  >
 <!-- <div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;"> -->
-  <checkbox-proxy [(state)]="elementOverlayState1" [showDefault]="true" name="bongo" [ariaLabel]="'the first button'"></checkbox-proxy>
+  <checkbox-proxy [(ngModel)]="elementOverlayState1" [showDefault]="true" name="bongo-cb" [ariaLabel]="'the first button'"></checkbox-proxy>
   <br><p>Checkbox Overlay State without content: {{elementOverlayState1}}</p>
 <!-- </div> -->
 
-<div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;">
-  <checkbox-proxy [(state)]="elementOverlayState1" [showDefault]="false" type="checkbox" name="bongo" [ariaLabel]="'the first button'"><ng-container *ngTemplateOutlet="temp4"></ng-container></checkbox-proxy>
-  <p>Checkbox Overlay State: {{elementOverlayState1}}</p>
 </div>
+<div style="width:25%;height: fit-content;text-align: center;border:solid 1px blue;">
+  <radio-proxy value="pizza" [(ngModel)]="radioValue" [showDefault]="true" name="bongo" [ariaLabel]="'the first button'"><ng-container *ngTemplateOutlet="temp5"></ng-container></radio-proxy>
+  <p>Radio Overlay State2: {{radioValue}}</p>
 </div>
+
+<div style="width:25%;height: fit-content;text-align: center;border:solid 1px blue;">
+  <radio-proxy value="chicken" [disabled]="true" [(ngModel)]="radioValue" [showDefault]="true" name="bongo" [ariaLabel]="'the first button'"><ng-container *ngTemplateOutlet="temp5"></ng-container></radio-proxy>
+  <p>Radio Overlay State2: {{radioValue}}</p>
+</div>
+
+<div style="width:25%;height: fit-content;text-align: center;border:solid 1px blue;">
+  <radio-proxy value="salad" [(ngModel)]="radioValue" [showDefault]="true" name="bongo" [ariaLabel]="'the first button'"><ng-container *ngTemplateOutlet="temp5"></ng-container></radio-proxy>
+  <p>Radio Overlay State2: {{radioValue}}</p>
+</div>
+
 <!-- <div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;">
   <ms-element-overlay [(state)]="elementOverlayState2" type="checkbox" [ariaLabel]="'the second button'" name="bongo"><ng-container *ngTemplateOutlet="temp5"></ng-container></ms-element-overlay>
   <p>Element Overlay State: {{elementOverlayState2}}</p>
@@ -62,5 +86,5 @@
 
 
 <ng-template #temp5>
-  <graphic-cb [checked]="elementOverlayState2"></graphic-cb>
+  <graphic-radio ></graphic-radio>
 </ng-template>

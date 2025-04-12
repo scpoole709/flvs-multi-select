@@ -6,11 +6,23 @@ import { ElementOverlayComponent } from "../../projects/multi-select/src/lib/ele
 import { AnimatedCheckBoxComponent } from "../../projects/multi-select/src/lib/animated-check-box/animated-check-box.component";
 import { GraphicCBComponent } from '../../projects/multi-select/src/lib/graphic-cb/graphic-cb.component';
 import { CheckboxOverlayComponent } from "../../projects/multi-select/src/lib/checkbox-overlay/checkbox-overlay.component";
+import { GraphicRadioComponent } from '../../projects/multi-select/src/lib/graphic-radio/graphic-radio.component';
+import { RadioOverlayComponent } from '../../projects/multi-select/src/lib/radio-overlay/radio-overlay.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MultiSelectComponent, CommonModule, ElementOverlayComponent, NgTemplateOutlet, AnimatedCheckBoxComponent, GraphicCBComponent, CheckboxOverlayComponent],
+  imports: [MultiSelectComponent,
+            CommonModule,
+            NgTemplateOutlet,
+            AnimatedCheckBoxComponent,
+            GraphicCBComponent,
+            CheckboxOverlayComponent,
+            GraphicRadioComponent,
+            RadioOverlayComponent,
+            FormsModule
+          ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -22,7 +34,17 @@ export class AppComponent implements OnInit {
   properties = new Properties();
 
   elementOverlayState1: boolean = true;
-  elementOverlayState2: boolean = false;
+  legacyRadioValue="bob";
+
+  radioValue = "chicken";
+
+  state2 = true;
+  set elementOverlayState2(value: boolean){
+    this.state2 = value;
+  }
+  get elementOverlayState2(){
+    return this.state2;
+  }
 
   ngOnInit(): void {
     this.properties.set("check-color", "black");

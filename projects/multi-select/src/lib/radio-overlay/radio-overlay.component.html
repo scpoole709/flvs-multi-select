@@ -1,0 +1,20 @@
+
+<div #div class="radio-overlay" (click)="click($event)" (keydown.enter)="cb.click()" tabindex="0">
+  <input #cb
+    type="radio"
+    [name]="name"
+    class="element"
+    value={{value}}
+    tabindex="-1"
+    [attr.aria-label]="ariaLabel"
+    role="Radio"
+  >
+  <ng-container *ngIf="showDefault">
+    <ng-container *ngTemplateOutlet="defaultTemplate"></ng-container>
+  </ng-container>
+  <ng-content #ref *ngIf="!showDefault"></ng-content>
+</div>
+
+<ng-template #defaultTemplate>
+  <graphic-radio id="gobygook" [checked]="checked" [disabled]="disable"></graphic-radio>
+</ng-template>
