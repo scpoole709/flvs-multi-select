@@ -9,11 +9,7 @@
   </div>
 </div>
 
-
-
-
-
-<div style="margin:3em">
+<div style="margin:13em">
   <multi-select [items]="testItems" [btnText]="'Select Columns'" (change)="onChange($event)" [properties]="properties"></multi-select>
 </div>
 
@@ -27,11 +23,13 @@
 <!-- <img src="./assets/yellowstar.png"> -->
 
 <ng-template #testtemplate>
+  <div style="flex-grow: 1;">
   <p (click)="clicked()">spagetti and meatballs</p>
   <p>spagetti and meatballs</p>
   <p>spagetti and meatballs</p>
   <p>spagetti and meatballs</p>
   <p>spagetti and meatballs</p>
+  </div>
 </ng-template>
 <br><br>
 
@@ -40,10 +38,11 @@
 
 <div  >
 <!-- <div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;"> -->
+  <div style="font-size:43;border:solid 3px green">
   <checkbox-proxy [(ngModel)]="elementOverlayState1" [showDefault]="true" name="bongo-cb" [ariaLabel]="'the first button'"></checkbox-proxy>
   <br><p>Checkbox Overlay State without content: {{elementOverlayState1}}</p>
 <!-- </div> -->
-
+</div>
 </div>
 <div style="width:25%;height: fit-content;text-align: center;border:solid 1px blue;">
   <radio-proxy value="pizza" [(ngModel)]="radioValue" [showDefault]="true" name="bongo" [ariaLabel]="'the first button'"><ng-container *ngTemplateOutlet="temp5"></ng-container></radio-proxy>

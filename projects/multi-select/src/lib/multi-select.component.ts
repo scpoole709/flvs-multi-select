@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class MultiSelectComponent implements OnInit, OnDestroy {
   @ViewChild("button") button: ElementRef;
+  @ViewChild("dropdown") dropdown: DropdownContainerComponent;
   @Input() btnText = "not set";
   @Input() items = [];
   @Input() properties;
@@ -27,7 +28,7 @@ export class MultiSelectComponent implements OnInit, OnDestroy {
       }
     }
   }
-  
+
   ngOnDestroy(){
     document.onclick = null;
   }
@@ -44,5 +45,10 @@ export class MultiSelectComponent implements OnInit, OnDestroy {
 
   toggle(){
     this.opened = !this.opened;
+    if(this.opened){
+      setTimeout( () => {
+        this.dropdown.position(this.button.nativeElement.getBoundingClientRect());
+      })
+    }
   }
 }

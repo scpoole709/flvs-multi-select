@@ -1,17 +1,18 @@
 .item {
   width: 100%;
-  min-height: 3rem;
-  height: fit-content;
+  min-height: 0rem;
   display: flex;
-  padding: .5rem;
+  padding: .3rem;
   border: solid 3px transparent;
   border-radius: .4em;
   outline: blue;
+  flex-basis: content;
 
   img {
-    height: 2rem;
-    width: 2rem;
+    height: 1.5rem;
+    width: 1.5rem;
     text-align: right;
+    border: solid 1px blue;
   }
 }
 

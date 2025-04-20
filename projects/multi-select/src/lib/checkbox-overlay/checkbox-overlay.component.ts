@@ -73,7 +73,7 @@ export class CheckboxOverlayComponent {
     this.div.nativeElement.focus();
     this.onTouched();
   }
-  hasFocus(){
+  get hasFocus(){
     return this.div?.nativeElement == document.activeElement;
   }
 }

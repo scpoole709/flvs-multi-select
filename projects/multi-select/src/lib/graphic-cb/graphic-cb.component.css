@@ -15,10 +15,10 @@
   padding: 0;
 
   .span-plain {
-    font-size: var(--cb-font-size);
+    font-size: inherit;
     position: absolute;
     left: .2em;
-    bottom: 0em;
+    bottom: .1em;
     width: 0px;
     height: 0px;
     border-color: var(--cb-check-color);
