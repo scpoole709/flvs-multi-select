@@ -6,7 +6,7 @@
   tabindex="0"
   [ariaLabel]="item.ariaLabel?item.ariaLabel : item.value"
   [style.color]='item.disable ? "#aaa" : "none"'
-  [ngClass]="cb.hasFocus()? 'focused' : ''"
+  [ngClass]="cb.hasFocus ? 'focused' : ''"
   >
   <div style="padding: 0 .5em;">
     <checkbox-proxy #cb [(state)]="checked" [disable]="isDisabled" [showDefault]="true" name="bongo" [ariaLabel]="'the first button'"></checkbox-proxy>

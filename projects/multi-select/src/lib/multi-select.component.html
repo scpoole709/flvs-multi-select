@@ -4,6 +4,6 @@
     {{arrow}}
   </button>
   <ng-container *ngIf="opened">
-    <ms-dropdown-container [items]="items" (focusLost)="focusLost()" [top]="button.clientHeight + 'px'" [properties]="properties"></ms-dropdown-container>
+    <ms-dropdown-container #dropdown [items]="items" (focusLost)="focusLost()" [properties]="properties"></ms-dropdown-container>
   </ng-container>
 </div>
