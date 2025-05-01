@@ -1,11 +1,12 @@
 import { Component, OnInit, OnDestroy, Input, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
 import { DropdownContainerComponent } from "./dropdown-container/dropdown-container.component";
 import { CommonModule } from '@angular/common';
+import { PropertiesDirective } from './properties/properties.directive';
 
 @Component({
   selector: 'multi-select',
   standalone: true,
-  imports: [CommonModule, DropdownContainerComponent],
+  imports: [CommonModule, DropdownContainerComponent, PropertiesDirective],
   templateUrl: './multi-select.component.html',
   styleUrl: './multi-select.component.css'
 })
@@ -13,8 +14,8 @@ export class MultiSelectComponent implements OnInit, OnDestroy {
   @ViewChild("button") button: ElementRef;
   @ViewChild("dropdown") dropdown: DropdownContainerComponent;
   @Input() btnText = "not set";
+  @Input() showSelectAll = true;
   @Input() items = [];
-  @Input() properties;
   @Output() change = new EventEmitter<any>();
 
   closedArrow = "➤";

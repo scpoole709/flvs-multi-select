@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component,  forwardRef, Input, model, ViewChild } from '@angular/core';
 import { GraphicCBComponent } from '../graphic-cb/graphic-cb.component';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { PropertiesDirective } from '../properties/properties.directive';
 
 @Component({
   selector: 'checkbox-proxy',
   standalone: true,
-  imports: [CommonModule, GraphicCBComponent],
+  imports: [CommonModule, GraphicCBComponent, PropertiesDirective],
   templateUrl: './checkbox-overlay.component.html',
   styleUrl: './checkbox-overlay.component.css',
     providers: [
