@@ -2,11 +2,11 @@
 <div #container class="dropdown-container" [style.top]="top" [style.left]="left">
   <div class="dropdown-items" (childFocusMgr)="focusChange($event)">
     <div *ngIf="showSelectAll" class="item-container select-all" autofocus>
-      <ms-drop-down-item [item]="selectAllItem" (changes)="selectAll($event)" [properties]="properties"></ms-drop-down-item>
+      <ms-drop-down-item [item]="selectAllItem" (changes)="selectAll($event)"></ms-drop-down-item>
     </div>
     <ng-container *ngFor="let item of items">
       <div class="item-container">
-        <ms-drop-down-item [item]="item" (changes)="changes($event)" [properties]="properties"></ms-drop-down-item>
+        <ms-drop-down-item [item]="item" (changes)="changes($event)"></ms-drop-down-item>
       </div>
     </ng-container>
   </div>
