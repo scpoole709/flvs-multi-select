@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, ViewChild, ElementRef, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 import { DropdownContainerComponent } from "./dropdown-container/dropdown-container.component";
 import { CommonModule } from '@angular/common';
 import { PropertiesDirective } from './properties/properties.directive';
@@ -6,6 +6,7 @@ import { PropertiesDirective } from './properties/properties.directive';
 @Component({
   selector: 'multi-select',
   standalone: true,
+  encapsulation: ViewEncapsulation.Emulated,
   imports: [CommonModule, DropdownContainerComponent, PropertiesDirective],
   templateUrl: './multi-select.component.html',
   styleUrl: './multi-select.component.css'
@@ -49,7 +50,7 @@ export class MultiSelectComponent implements OnInit, OnDestroy {
     if(this.opened){
       setTimeout( () => {
         this.dropdown.position(this.button.nativeElement.getBoundingClientRect());
-      })
+      }, 1000);
     }
   }
 }
