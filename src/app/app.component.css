@@ -1,0 +1,8 @@
+.template-container {
+  display: flex;
+
+  span {
+    white-space: nowrap;
+    padding-right: 1em;
+  }
+}

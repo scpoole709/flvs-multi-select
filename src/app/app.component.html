@@ -1,49 +1,50 @@
+<button style="margin: 3em;">Pre Test Button</button>
 
-<button>Pre Test Button</button>
-
-<div style="margin: 0 auto;height: 4em; width: 4em; border:solid 3px black;display: flex;border-radius: 50%;
+<!-- <div style="margin: 0 auto;height: 4em; width: 4em; border:solid 3px black;display: flex;border-radius: 50%;
   align-items: center;
   justify-content: center;">
   <div style="height:50%; width: 50%; border: solid 3px red;border-radius: 50%;vertical-align: middle;">
 
   </div>
+</div> -->
+
+<div style="display: flex;justify-content: space-around;padding: 2em; width: 60%; text-align: center;">
+
+  <div>
+    <multi-select [items]="testItems" [btnText]="'Select Columns'" (change)="onChange($event)"></multi-select>
+  </div>
+
+  <div style="display: flex; flex-direction: column;">
+    <p *ngFor="let t of testItems">
+      {{ t.value + ": " + t.checked }}
+    </p>
+  </div>
 </div>
 
-<div style="margin:13em">
-  <multi-select [items]="testItems" [btnText]="'Select Columns'" (change)="onChange($event)"></multi-select>
-</div>
-
-<div style="display: flex; flex-direction: column;">
-  <p *ngFor="let t of testItems">
-    {{ t.text + ": " + t.checked }}
-  </p>
-</div>
-
-<button>Post Test Button</button>
+<button style="margin: 3em;">Post Test Button</button>
 <!-- <img src="./assets/yellowstar.png"> -->
 
 <ng-template #testtemplate>
-  <div style="flex-grow: 1;">
-  <p (click)="clicked()">spagetti and meatballs</p>
-  <p>spagetti and meatballs</p>
-  <p>spagetti and meatballs</p>
-  <p>spagetti and meatballs</p>
-  <p>spagetti and meatballs</p>
+  <div class="template-container">
+    <span (click)="clicked()">spagetti and meatballs</span>
+    <span>spagetti and meatballs</span>
+    <span>spagetti and meatballs</span>
+    <span>spagetti and meatballs</span>
+    <span>spagetti and meatballs</span>
   </div>
 </ng-template>
 <br><br>
-
+<!--
 <input type="radio" name="bon" [(ngModel)]="elementOverlayState1">
 <input type="radio" name="bon" [(ngModel)]="elementOverlayState1">
 
-<div  >
-<!-- <div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;"> -->
+<div >
   <div style="font-size:43;border:solid 3px green">
   <checkbox-proxy [(ngModel)]="elementOverlayState1" [showDefault]="true" name="bongo-cb" [ariaLabel]="'the first button'"></checkbox-proxy>
   <br><p>Checkbox Overlay State without content: {{elementOverlayState1}}</p>
-<!-- </div> -->
 </div>
 </div>
+
 <div style="width:25%;height: fit-content;text-align: center;border:solid 1px blue;">
   <radio-proxy value="pizza" [(ngModel)]="radioValue" [showDefault]="true" name="bongo" [ariaLabel]="'the first button'"><ng-container *ngTemplateOutlet="temp5"></ng-container></radio-proxy>
   <p>Radio Overlay State2: {{radioValue}}</p>
@@ -57,7 +58,7 @@
 <div style="width:25%;height: fit-content;text-align: center;border:solid 1px blue;">
   <radio-proxy value="salad" [(ngModel)]="radioValue" [showDefault]="true" name="bongo" [ariaLabel]="'the first button'"><ng-container *ngTemplateOutlet="temp5"></ng-container></radio-proxy>
   <p>Radio Overlay State2: {{radioValue}}</p>
-</div>
+</div> -->
 
 <!-- <div style="width:25%;height: 3em;text-align: center;border:solid 1px blue;">
   <ms-element-overlay [(state)]="elementOverlayState2" type="checkbox" [ariaLabel]="'the second button'" name="bongo"><ng-container *ngTemplateOutlet="temp5"></ng-container></ms-element-overlay>

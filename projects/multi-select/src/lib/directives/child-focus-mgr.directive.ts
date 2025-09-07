@@ -31,7 +31,7 @@ export class ChildFocusMgrDirective {
 
   }
 
-  focus(list, i: number){
+    focus(list, i: number){
     setTimeout( () => {
       (<HTMLElement>list[i]).focus();
     }, 10);
@@ -42,7 +42,7 @@ export class ChildFocusMgrDirective {
     let i =  list.indexOf(document.activeElement);
     i += up ? -1 : 1;
     if (list.length > 0 && i >= 0 && i < list.length){
-      this.focus(list, i);
+      this. focus(list, i);
     }
     else {
       this.childFocusMgr.next();
