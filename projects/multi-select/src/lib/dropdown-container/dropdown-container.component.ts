@@ -1,5 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component, Input, ViewChildren, OnChanges, EventEmitter, Output, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewChildren, OnChanges, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 import { DropDownItemComponent } from '../drop-down-item/drop-down-item.component';
 import { ChildFocusMgrDirective } from '../directives/child-focus-mgr.directive';
 
@@ -61,6 +61,8 @@ export class DropdownContainerComponent implements OnChanges {
     if (parentRect.x + ourRect.width > window.innerWidth){
       this.left = parentRect.width - ourRect.width + "px";
     }
+
+    this.container.nativeElement.style.opacity = "1";
   }
 
   checkAllSelected(){
