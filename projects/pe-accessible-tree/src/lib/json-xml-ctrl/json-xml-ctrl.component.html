@@ -1,0 +1,39 @@
+<div #scrolldiv class="json-xml" (scroll)="onScroll($event)">
+  <ul class='json-xml-ul' style='background:white'>
+    <ng-template #recursiveList let-list>
+
+      <ng-container *ngFor="let item of list; let i = index">
+
+        <liarrow [arrowStyle]="arrowStyle(item)" [(ngModel)]="item.hideChildren" [hidden]="item.hidden">
+          <div class="container" (click)="itemClicked($event, item)">
+
+            <ng-container>
+              <span [class]="item.cls" (click)="itemClicked($event, item)">
+                {{item.display}}
+              </span>
+            </ng-container>
+
+          </div>
+        </liarrow>
+        <ng-container *ngIf="!item.hideChildren">
+          <ng-container *ngFor="let attr of item.attributes;">
+            <li class="attribute-li">
+              <div class="container">
+                <span [class]="attr.cls" (click)="attrClicked($event, attr)">{{attr.display}}</span>
+              </div>
+            </li>
+          </ng-container>
+        </ng-container>
+
+        <ng-container *ngIf="!item.hideChildren">
+          <ul class="jx-child-ul" id={{item.id}}>
+            <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: item.children }"></ng-container>
+          </ul>
+        </ng-container>
+
+      </ng-container>
+
+    </ng-template>
+    <ng-container *ngTemplateOutlet="recursiveList; context:{ $implicit: list }"></ng-container>
+  </ul>
+</div>

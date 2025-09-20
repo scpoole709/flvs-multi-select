@@ -1,6 +1,6 @@
 .template-container {
   display: flex;
-
+  flex-direction: column;
   span {
     white-space: nowrap;
     padding-right: 1em;

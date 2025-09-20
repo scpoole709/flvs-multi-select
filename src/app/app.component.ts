@@ -9,20 +9,20 @@ import { CheckboxOverlayComponent } from "../../projects/multi-select/src/lib/ch
 import { GraphicRadioComponent } from '../../projects/multi-select/src/lib/graphic-radio/graphic-radio.component';
 import { RadioOverlayComponent } from '../../projects/multi-select/src/lib/radio-overlay/radio-overlay.component';
 import { FormsModule } from '@angular/forms';
+import { PeAccessibleTreeComponent } from "../../projects/pe-accessible-tree/src/public-api";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [MultiSelectComponent,
-            CommonModule,
-            NgTemplateOutlet,
-            AnimatedCheckBoxComponent,
-            GraphicCBComponent,
-            CheckboxOverlayComponent,
-            GraphicRadioComponent,
-            RadioOverlayComponent,
-            FormsModule
-          ],
+    CommonModule,
+    NgTemplateOutlet,
+    AnimatedCheckBoxComponent,
+    GraphicCBComponent,
+    CheckboxOverlayComponent,
+    GraphicRadioComponent,
+    RadioOverlayComponent,
+    FormsModule, PeAccessibleTreeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -50,10 +50,10 @@ export class AppComponent implements OnInit {
     this.properties.set("check-color", "black");
     setTimeout( () => {
       this.testItems = [
-        {template: this.testtemplate, value: "clown 1", checked: true},
-        {text: "bozo", value: "clown 2", checked: true, disable:true},
-        {text: "shnozo", value: "clown 3", checked: true},
-        {src: "./assets/yellowstar.png", value: "clown 4", checked: true}
+        {template: this.testtemplate, value: "Results from clicking template", checked: true},
+        {text: "Read Only", value: "This is a read only field", checked: true, disable:true},
+        {text: "shnozo", value: "clown", checked: true},
+        {src: "./assets/yellowstar.png", value: "A star is born", checked: true}
       ];
     }, 10);
   }

@@ -125,6 +125,39 @@
           }
         }
       }
+    },
+    "pe-accessible-tree": {
+      "projectType": "library",
+      "root": "projects/pe-accessible-tree",
+      "sourceRoot": "projects/pe-accessible-tree/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/pe-accessible-tree/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/pe-accessible-tree/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/pe-accessible-tree/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/pe-accessible-tree/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }

@@ -1,0 +1,224 @@
+
+.json-xml {
+    overflow:auto;
+    color:black;
+    background: white;
+  }
+
+.json-xml-ul {
+    list-style-type: none;
+    background:rgba(0,0,0,0);
+    margin: 5px 0;
+    font-size: 14px;
+    font-family: 'Verdana';
+    -webkit-overflow-scrolling: touch;
+    border: solid 1px red;
+    height: fit-content;
+  }
+
+  label{
+      background-color: rgba(0,0,0,0);
+  }
+
+.i-span{
+    background-color: rgba(0,0,0,0);
+}
+
+.jx-child-ul {
+    list-style-type: none;
+      background: rgba(0, 0, 0, 0);
+      margin: 5px 0;
+      font-size: 14px;
+      font-family: 'Verdana';
+      -webkit-overflow-scrolling: touch;
+      border: solid 1px red;
+      height: fit-content;
+}
+
+.container {
+    display:inline;
+    background:none;
+    cursor: pointer;
+    font-size: 10pt;
+    padding-left:0px;
+    padding-right:0px;
+}
+
+.attribute-li {
+    text-decoration:none;
+    width:fit-content;
+    margin-left:2em;
+}
+.attribute-style-old {
+    display:inline-block;
+    border-top:solid 2px white;
+    border-radius: 2px;
+
+    min-width:4em;
+    width:fit-content;
+    overflow:visible;
+    cursor:pointer;
+    font-size:10pt;
+    margin-left:1em;
+}
+
+.comment-style {
+    display:inline-block;
+    padding: 2px 0em 2px 0em;
+    margin-left:0px;
+    background: orange;
+    color:black;
+    border:none;
+    min-width:4em;
+    width:auto;
+    overflow:visible;
+    cursor:pointer;
+    font-size:10pt;
+    border-radius: 6px;
+}
+
+.text-style {
+    display:inline-block;
+    padding: 2px 0em 2px 0em;
+    margin-left:0px;
+    background: none;
+    color:black;
+    border:none;
+    min-width:4em;
+    max-width:30em;
+    width:auto;
+    overflow:visible;
+    cursor:pointer;
+    font-size:10pt;
+    border-radius: 6px;
+}
+
+.base-style {
+  padding: 2px 1em;
+  margin-left: 13px;
+  border: none;
+  border-radius: 6px;
+  min-width: 10em;
+  height: 2em;
+}
+
+.group-style {
+  background: #3daff3;
+}
+
+.member-style {
+    background: darkgray;
+}
+
+.link-style {
+    background: red;
+}
+
+.element-style {
+    padding: 2px 1em 2px 1em;
+    margin-left:13px;
+    background: lightcoral;
+    border:none;
+    border-radius: 6px;
+    min-width:10em;
+}
+
+.reference-style {
+    padding: 2px 1em 2px 1em;
+    margin-left:13px;
+    background: gainsboro;
+    border:none;
+    border-radius: 6px;
+    min-width:10em;
+}
+
+.liclass {
+    padding: 0px 1em 0px 1em;
+    width:fit-content;
+    margin-left:13px;
+    background-color:rgba(0,0,0,0);
+}
+
+.liclass:hover {
+    background-color:lightblue;
+}
+
+/* Hide the browser's default checkbox */
+.container input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+input[type=checkbox]{
+    opacity:0;
+
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0px;
+    left:4px;
+    height: 16px;
+    width: 16px;
+    background-repeat: no-repeat;
+}
+
+.checkmark:hover {
+
+    background:lighblue;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* .unchecked {
+    background-image: url('../../assets/component-parts/checkboxUnchecked.png');
+}
+.checked {
+    background-image: url('../../assets/component-parts/checkboxChecked.png');
+}
+.schrodinger {
+    background-image: url('../../assets/component-parts/checkboxSchrodinger.png');
+} */
+
+.jx-menu {
+    display:block;
+    z-index:2;
+    position:relative;
+    border: 1px solid black;
+    color:black;
+    background:white;
+    margin:0px 4px 4px 4px;
+    padding:4px 4px 4px 4px;
+    width:fit-content;
+  }
+
+  .jx-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow:auto;
+    font-size:14px;
+    color:white;
+  }
+
+  .jx-li {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color:black;
+  }
