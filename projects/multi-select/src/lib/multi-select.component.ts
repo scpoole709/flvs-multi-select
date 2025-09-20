@@ -50,7 +50,7 @@ export class MultiSelectComponent implements OnInit, OnDestroy {
     if(this.opened){
       setTimeout( () => {
         this.dropdown.position(this.button.nativeElement.getBoundingClientRect());
-      }, 1);
+      });
     }
   }
 }
